@@ -3,13 +3,13 @@
 Native bindings to iOS's UIStepper
 
 ```
-npm install -S react-native-uistepper
+npm install -S @jacobp100/react-native-uistepper
 ```
 
 Or
 
 ```
-yarn add react-native-uistepper
+yarn add @jacobp100/react-native-uistepper
 ```
 
 Props:-

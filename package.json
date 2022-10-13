@@ -1,5 +1,5 @@
 {
-  "name": "react-native-uistepper",
+  "name": "@jacobp100/react-native-uistepper",
   "version": "0.1.0",
   "description": "test",
   "main": "lib/commonjs/index",
