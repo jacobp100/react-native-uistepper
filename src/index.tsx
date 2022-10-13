@@ -1,26 +1,47 @@
+import React from 'react';
 import {
   requireNativeComponent,
-  UIManager,
-  Platform,
+  StyleProp,
+  StyleSheet,
   ViewStyle,
+  NativeSyntheticEvent,
+  UIManager,
 } from 'react-native';
 
-const LINKING_ERROR =
-  `The package 'react-native-uistepper' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo Go\n';
+const Stepper = requireNativeComponent<any>('RCTStepper');
+// @ts-expect-error
+const { width, height } = UIManager.RCTStepper.Constants;
 
-type UistepperProps = {
-  color: string;
-  style: ViewStyle;
+const styles = StyleSheet.create({
+  container: {
+    width,
+    height,
+  } as ViewStyle,
+});
+
+type ChangeEvent = NativeSyntheticEvent<{ value: number }>;
+
+type Props = {
+  style?: StyleProp<ViewStyle>;
+  value?: number;
+  isContinuous?: boolean;
+  autorepeat?: boolean;
+  wraps?: boolean;
+  minimumValue?: number;
+  maximumValue?: number;
+  stepValue?: number;
+  onChange?: (e: ChangeEvent) => void;
+  onValueChange?: (value: number) => void;
+  disabled?: boolean;
 };
 
-const ComponentName = 'UistepperView';
-
-export const UistepperView =
-  UIManager.getViewManagerConfig(ComponentName) != null
-    ? requireNativeComponent<UistepperProps>(ComponentName)
-    : () => {
-        throw new Error(LINKING_ERROR);
-      };
+export default (props: Props) => (
+  <Stepper
+    {...props}
+    style={StyleSheet.compose(styles.container, props.style)}
+    onChange={(e: ChangeEvent) => {
+      props.onChange?.(e);
+      props.onValueChange?.(e.nativeEvent.value);
+    }}
+  />
+);

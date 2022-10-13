@@ -1,13 +1,16 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
-import { UistepperView } from 'react-native-uistepper';
+import { StyleSheet, Text, SafeAreaView } from 'react-native';
+import UIStepper from 'react-native-uistepper';
 
 export default function App() {
+  const [value, setValue] = React.useState(0);
+
   return (
-    <View style={styles.container}>
-      <UistepperView color="#32a852" style={styles.box} />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <UIStepper value={value} onValueChange={setValue} />
+      <Text>{value}</Text>
+    </SafeAreaView>
   );
 }
 
@@ -16,10 +19,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });

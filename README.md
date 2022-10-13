@@ -1,29 +1,28 @@
-# react-native-uistepper
-Native iOS UIStepper for React Native
-## Installation
+# React Native UIStepper
 
-```sh
-npm install react-native-uistepper
+Native bindings to iOS's UIStepper
+
+```
+npm install -S react-native-uistepper
 ```
 
-## Usage
+Or
 
-```js
-import { UistepperView } from "react-native-uistepper";
-
-// ...
-
-<UistepperView color="tomato" />
+```
+yarn add react-native-uistepper
 ```
 
-## Contributing
+Props:-
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+- `value` (`number`)
+- `isContinuous` (`boolean`)
+- `autorepeat` (`boolean`)
+- `wraps` (`boolean`)
+- `minimumValue` (`number`)
+- `maximumValue` (`number`)
+- `stepValue` (`number`)
+- `onChange` (`(e: ChangeEvent) => void`)
+- `onValueChange` (`(value: number) => void`)
+- `disabled` (`boolean`)
 
-## License
-
-MIT
-
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+These props map directly to those as defined in [Apple's documentation](https://developer.apple.com/documentation/uikit/uistepper)
