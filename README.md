@@ -2,6 +2,8 @@
 
 Native bindings to iOS's UIStepper
 
+Exported from [TechniCalc](https://jacobdoescode.com/technicalc)
+
 ```
 npm install -S @jacobp100/react-native-uistepper
 ```
