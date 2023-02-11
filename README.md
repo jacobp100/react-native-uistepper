@@ -1,8 +1,8 @@
 # React Native UIStepper
 
-Native bindings to iOS's UIStepper
+<a href="https://jacobdoescode.com/technicalc"><img alt="Part of the TechniCalc Project" src="https://github.com/jacobp100/technicalc-core/blob/master/banner.png" width="200" height="60"></a>
 
-Exported from [TechniCalc](https://jacobdoescode.com/technicalc)
+Native bindings to iOS's UIStepper
 
 ```
 npm install -S @jacobp100/react-native-uistepper
